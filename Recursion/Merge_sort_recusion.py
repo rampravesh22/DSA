@@ -1,5 +1,5 @@
 def mergeSort(arr):
-    if len(arr) > 0:
+    if len(arr) > 1:
         mid = len(arr) // 2
         left_list = arr[:mid]
         right_list = arr[mid:]
@@ -14,11 +14,17 @@ def mergeSort(arr):
                 i += 1
                 k += 1
             else:
-                pass
+                arr[k] = right_list[j]
+                j += 1
+                k += 1
+        while i < len(left_list):
+            arr[k] = left_list[i]
+            i += 1
+            k += 1
+        while j < len(right_list):
+            arr[k] = right_list[j]
+            j += 1
+            k += 1
+    return arr
 
-    print("Hello world")
-    for i in range(10):
-        print("There is no way learning without practicals")
-
-
-mergeSort([2, 5, 1, 3, 0], 0, 4)
+print(mergeSort([2, 5, 1, 3, 0]))
