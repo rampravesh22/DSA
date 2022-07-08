@@ -1,3 +1,11 @@
+""""
+Algorithms
+1- Slit the unsorted list
+2- Compare each of the elemnt and group
+3 - Repeat step-2 until the whole list is merged and sorted
+"""
+
+
 def mergeSort(arr):
     if len(arr) > 1:
         mid = len(arr) // 2
