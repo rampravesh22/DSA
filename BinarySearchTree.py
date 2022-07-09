@@ -11,24 +11,24 @@ class BST:
         if self.key == data:
             return
 
-        if self.key > data:
-            if self.lchild:
+        if data < self.key:
+            if self.lchild is not None:
                 self.lchild.insert(data)
             else:
                 self.lchild = BST(data)
-        else:
-            if self.rchild:
+        elif data > self.key:
+            if self.rchild is not None:
                 self.rchild.insert(data)
             else:
                 self.rchild = BST(data)
 
     def __str__(self):
         return f"{self.key}"
-root = BST(None)
-root.insert(12)
-root.insert(23)
-root.insert(1)
-root.insert(89)
-root.insert(7)
-print(root)
 
+
+root = BST(None)
+l = [23, 4, 67, 1, 90, 2]
+for item in l:
+    root.insert(item)
+
+print(root)

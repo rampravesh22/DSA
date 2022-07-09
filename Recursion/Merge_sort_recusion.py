@@ -1,6 +1,6 @@
 """"
 Algorithms
-1- Slit the unsorted list
+1- Split the unsorted list
 2- Compare each of the elemnt and group
 3 - Repeat step-2 until the whole list is merged and sorted
 """
@@ -34,5 +34,6 @@ def mergeSort(arr):
             j += 1
             k += 1
     return arr
-
-print(mergeSort([2, 5, 1, 3, 0]))
+string = "9 5 3 1 2 4"
+arr = list(map(int, string.split()))
+print(mergeSort(arr))
