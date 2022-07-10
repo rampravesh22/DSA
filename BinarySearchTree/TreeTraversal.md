@@ -6,16 +6,18 @@
     3. Traversing the right sub-tree
     (repeat these step recursively)
     
-![](img/preorder.JPG)
+![](img/preorder.jpeg)
 ## 2. In-order Travesal 
 ### Left Root Right
     1. Traverse the lelft sub-tree
     2. Visit the root node and finally
     3. Traversing the right sub-tree
     (repeat these step recursively)
+![](img/inorder.jpeg)
 ## 3.Post-order Travesal 
 ### Left Right Root
     3. Traversing the left subtree
     2. Traversing the right sub-tree and finaly
     3. Visit the root node
     (repeat these step recursively)
+![](img/postorder.jpeg)
