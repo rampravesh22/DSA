@@ -1,3 +1,5 @@
+
+
 class BST:
     # for initialization of new node
     def __init__(self, key):
@@ -42,14 +44,14 @@ class BST:
 
     # Traversal operation in tree
     # 1- Pre order traversal
+
     # 2- In order traversal
     # 3- Post order traversal
 
     def __str__(self):
         return f"{self.key}"
 
-    #new
-    
+
     
 
 
