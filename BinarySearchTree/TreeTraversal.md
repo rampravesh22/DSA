@@ -6,7 +6,7 @@
     3. Traversing the right sub-tree
     (repeat these step recursively)
     
-![](E:\Desktop\IMG_20220710_111949.JPG)
+![](img/preorder.JPG)
 ## 2. In-order Travesal 
 ### Left Root Right
     1. Traverse the lelft sub-tree
