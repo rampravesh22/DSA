@@ -1,5 +1,3 @@
-
-
 class BST:
     # for initialization of new node
     def __init__(self, key):
