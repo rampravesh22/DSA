@@ -8,7 +8,7 @@ def getMinDiff(arr, n, k):
         return ans
 
 
-# Enter the input
+# Enter the input for this program
 k = 5
 n = 10
 input = "2 6 3 4 7 2 10 3 2 1"
