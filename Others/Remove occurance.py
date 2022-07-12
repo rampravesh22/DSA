@@ -4,9 +4,10 @@ for _ in range(t):
     arr = list(map(int,input().split()))
     x = int(input())
     ans = []
-    for i in range(n):
-        if arr[i] == x:
+    for i in range(N):
+        if A[i] == X:
             ans.insert(0,1)
         else:
-            ans.append(arr[i])
+            ans.append(A[i])
+
     print(*ans)
