@@ -14,15 +14,15 @@ class BST:
             return
 
         if data < self.key:
-            if self.lchild is not None:
-                self.lchild.insert(data)
-            else:
+            if self.lchild is None:
                 self.lchild = BST(data)
-        elif data > self.key:
-            if self.rchild is not None:
-                self.rchild.insert(data)
             else:
+                self.lchild.insert(data)
+        elif data > self.key:
+            if self.rchild is None:
                 self.rchild = BST(data)
+            else:
+                self.rchild.insert(data)
 
     # Searching data/node present in the tree or not
     def search(self, data):
@@ -30,18 +30,26 @@ class BST:
             print("Node is found at")
             return
         if data < self.key:
-            if self.lchild is not None:
-                self.lchild.search(data)
-            else:
+            if self.lchild is None:
                 print("Node is not present in left subtree")
-        else:
-            if self.rchild is not None:
-                self.rchild.search(data)
             else:
+                self.lchild.search(data)
+        else:
+            if self.rchild is None:
                 print("Node is not present in the right subtree")
+            else:
+                self.rchild.search(data)
 
     # Traversal operation in tree
     # 1- Pre order traversal
+    def preorder(self):
+        print(self.key, end=" ", sep=",")
+        if self.lchild is not None:
+            node = self.lchild
+            node.preorder()
+        if self.rchild is not None:
+            node = self.rchild
+            node.preorder()
 
     # 2- In order traversal
     # 3- Post order traversal
@@ -50,13 +58,10 @@ class BST:
         return f"{self.key}"
 
 
-    
-
-
 root = BST(10)
 l = [23, 4, 67, 1, 90, 2]
 
 for data in l:
     root.insert(data)
 
-root.search(60)
+root.preorder()
