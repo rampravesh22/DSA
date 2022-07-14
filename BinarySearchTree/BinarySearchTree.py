@@ -60,18 +60,27 @@ class BST:
             self.rchild.inorder()
 
     # 3- Post order traversal
-
+    def postorder(self):
+        if self.lchild is not None:
+            self.lchild.postorder()
+        if self.rchild is not None:
+            self.rchild.postorder()
+        print(self.key,end=" ")
     def __str__(self):
         return f"{self.key}"
 
 
 root = BST(10)
-l = [23, 4, 67, 1, 90, 2]
+l = [23, 4, 67,8, 1, 90, 2]
 
 for data in l:
     root.insert(data)
-print("Preorder traversal")
+print("--------------------Preorder traversal---------------------------")
 root.preorder()
 print()
-print("Inorder traversal")
+print("--------------------Inorder traversal---------------------------")
 root.inorder()
+print()
+print("--------------------Postorder traversal---------------------------")
+root.postorder()
+
