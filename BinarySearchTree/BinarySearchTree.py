@@ -43,7 +43,7 @@ class BST:
     # Traversal operation in tree
     # 1- Pre order traversal
     def preorder(self):
-        print(self.key, end=" ", sep=",")
+        print(self.key, end=" ")
         if self.lchild is not None:
             node = self.lchild
             node.preorder()
@@ -52,6 +52,13 @@ class BST:
             node.preorder()
 
     # 2- In order traversal
+    def inorder(self):
+        if self.lchild is not None:
+            self.lchild.inorder()
+        print(self.key, end=" ")
+        if self.rchild is not None:
+            self.rchild.inorder()
+
     # 3- Post order traversal
 
     def __str__(self):
@@ -63,5 +70,8 @@ l = [23, 4, 67, 1, 90, 2]
 
 for data in l:
     root.insert(data)
-
+print("Preorder traversal")
 root.preorder()
+print()
+print("Inorder traversal")
+root.inorder()
