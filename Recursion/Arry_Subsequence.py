@@ -6,5 +6,4 @@ def poswerSet(arr, ind,ans=[]):
     poswerSet(arr, ind + 1)
     ans.remove(arr[ind])
     poswerSet(arr, ind + 1)
-
 poswerSet([3, 1, 2], 0)
