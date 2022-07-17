@@ -45,7 +45,7 @@ def quickSort(arr, first_index, last_index):
         quickSort(arr, p + 1, last_index)
     else:
         print(arr)
-
+print()
 
 ans = quickSort(arr=[5, 4, 3, 2, 1], first_index=0, last_index=4)
 print(ans)
