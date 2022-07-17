@@ -33,19 +33,19 @@ def pivot_place(arr, first_index, last_index):
             break
         else:
             arr[left], arr[right] = arr[right], arr[left]
-    pivot, arr[right] = arr[right], pivot
+    arr[first_index], arr[right] = arr[right], arr[first_index]    # arr[first_index] = pivot
     return right
 
 
 def quickSort(arr, first_index, last_index):
-    print(arr)
+    if first_index > last_index:
+        return arr
     if first_index < last_index:
         p = pivot_place(arr, first_index, last_index)
         quickSort(arr, first_index, p - 1)
         quickSort(arr, p + 1, last_index)
-    else:
-        print(arr)
-print()
 
-ans = quickSort(arr=[5, 4, 3, 2, 1], first_index=0, last_index=4)
-print(ans)
+arr = [5, 4, 3, 2, 1]
+n=len(arr)-1
+quickSort(arr, first_index=0, last_index=n)
+print(arr)

@@ -6,7 +6,7 @@ class BST:
         self.rchild = None
 
     # inserting the data in the tree
-    def insert(self, data):
+    def insertNode(self, data):
         if self.key is None:
             self.key = data
             return
@@ -17,12 +17,12 @@ class BST:
             if self.lchild is None:
                 self.lchild = BST(data)
             else:
-                self.lchild.insert(data)
+                self.lchild.insertNode(data)
         elif data > self.key:
             if self.rchild is None:
                 self.rchild = BST(data)
             else:
-                self.rchild.insert(data)
+                self.rchild.insertNode(data)
 
     # Searching data/node present in the tree or not
     def search(self, data):
@@ -66,6 +66,29 @@ class BST:
         if self.rchild is not None:
             self.rchild.postorder()
         print(self.key,end=" ")
+
+
+    # Deletion operation
+    def deleteNode(self,data):
+        if self.key is None:
+            print("Tree is empty")
+            return
+        if data < self.key:
+            if self.lchild is not None:
+                self.lchild = self.lchild.deleteNode()
+            else:
+                print("Given node is not present in th tree")
+
+
+
+
+
+
+
+
+
+
+
     def __str__(self):
         return f"{self.key}"
 
@@ -74,7 +97,7 @@ root = BST(10)
 l = [23, 4, 67,8, 1, 90, 2]
 
 for data in l:
-    root.insert(data)
+    root.insertNode(data)
 print("--------------------Preorder traversal---------------------------")
 root.preorder()
 print()
