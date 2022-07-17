@@ -38,12 +38,14 @@ def pivot_place(arr, first_index, last_index):
 
 
 def quickSort(arr, first_index, last_index):
-    if first_index == last_index:
-        return arr
-    p = pivot_place(arr, first_index, last_index)
-    quickSort(arr, first_index, p - 1)
-    quickSort(arr, p + 1, last_index)
+    print(arr)
+    if first_index < last_index:
+        p = pivot_place(arr, first_index, last_index)
+        quickSort(arr, first_index, p - 1)
+        quickSort(arr, p + 1, last_index)
+    else:
+        print(arr)
 
 
-ans = quickSort([5, 4, 3, 2, 1], 0, 4)
+ans = quickSort(arr=[5, 4, 3, 2, 1], first_index=0, last_index=4)
 print(ans)
