@@ -65,26 +65,39 @@ class BST:
             self.lchild.postorder()
         if self.rchild is not None:
             self.rchild.postorder()
-        print(self.key,end=" ")
-
+        print(self.key, end=" ")
 
     # Deletion operation
-    def deleteNode(self,data):
+    def deleteNode(self, data):
         if self.key is None:
             print("Tree is empty")
             return
         if data < self.key:
             if self.lchild is not None:
-                self.lchild = self.lchild.deleteNode()
+                self.lchild = self.lchild.deleteNode(data)
             else:
                 print("Given node is not present in th tree")
+        elif data > self.key:
+            if self.rchild is not None:
+                self.rchild = self.rchild.deleteNode(data)
+            else:
+                print("Given node is not present in the tree")
 
-
-
-
-
-
-
+        else:
+            # if the node contains zero or one child
+            if self.lchild is None:
+                temp = self.rchild
+                return temp
+            if self.rchild is None:
+                temp = self.lchild
+                return temp
+            # if the node contains two child node
+            node = self.rchild
+            while node.lchild:
+                node = node.lchild
+            self.key = node.key
+            self.rchild = self.rchild.deleteNode(node.key)
+        return self
 
 
 
@@ -94,16 +107,10 @@ class BST:
 
 
 root = BST(10)
-l = [23, 4, 67,8, 1, 90, 2]
+l = [23, 4, 67, 8, 1, 90, 2]
 
 for data in l:
     root.insertNode(data)
-print("--------------------Preorder traversal---------------------------")
-root.preorder()
-print()
-print("--------------------Inorder traversal---------------------------")
-root.inorder()
-print()
-print("--------------------Postorder traversal---------------------------")
-root.postorder()
 
+root.deleteNode(10)
+root.inorder()
