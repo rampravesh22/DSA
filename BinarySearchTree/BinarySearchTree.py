@@ -87,9 +87,11 @@ class BST:
             # if the node contains zero or one child
             if self.lchild is None:
                 temp = self.rchild
+                self = None
                 return temp
             if self.rchild is None:
                 temp = self.lchild
+                self = None                           # inpection disabled : first argument of method is reassigned
                 return temp
             # if the node contains two child node
             node = self.rchild
@@ -112,5 +114,5 @@ l = [23, 4, 67, 8, 1, 90, 2]
 for data in l:
     root.insertNode(data)
 
-root.deleteNode(10)
+root.deleteNode(2)
 root.inorder()
