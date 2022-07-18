@@ -38,15 +38,15 @@
 ## 1. When there is no child is present
 
     1. Simply delete the node with zero child.
-    2. And point the parent node to None
+    2. And point the parent node to None.
 
 ## 2. When there is only one child is present
 
-    1. Simply delete the node with one child
-    2. And now replace with the child node with node you want to delete 
+    1. Simply delete the node with one child.
+    2. And now replace with the child node with node you want to delete.
 
 ## 3. When there is two child present
 
-    1. Find the smallest node from the right subtree
-    2. And then replace with that smallest node that you want to delete.
-
+    1. Find the smallest node from the right subtree.
+    2. And then replace the node with the smallest node from right subtree.
+z
