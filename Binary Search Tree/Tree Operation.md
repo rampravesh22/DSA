@@ -49,4 +49,4 @@
 
     1. Find the smallest node from the right subtree.
     2. And then replace the node with the smallest node from right subtree.
-z
+
