@@ -10,7 +10,7 @@ for i in range(n - 1):
             print(f"{j + 1}- swap {l[j]} and {l[j + 1]}: ", end="")
             print(*l)
         else:
-            print(f'{j + 1}    No swap    : ', end="")
+            print(f'{j + 1}- No swap     : ', end="")
             print(*l)
     print()
 print(f"Sorted list: {l}")
