@@ -1,20 +1,8 @@
-def changeme(mylist):
-    mylist.append([1, 2, 3, 4])
-    print("Values inside the function: ", mylist)
-    return
-
-
-mylist = [10, 20, 30]
-changeme(mylist)
-print("Values outside the function: ", mylist)
-
-
-def changeme(mylist):
-    mylist.clear()
-    print("Values inside the function: ", mylist)
-    return
-
-
-mylist = [10, 20, 30]
-changeme(mylist)
-print("Values outside the function: ", mylist)
+a= {1,2,3,4,5}
+d={
+    "name":"Rampravesh",
+    'age':34,
+    'roll':124
+}
+print("helllo there how are you \" where are you from ")
+print(new_dictionary)
