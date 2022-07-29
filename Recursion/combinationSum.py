@@ -6,7 +6,7 @@ def combinationSum(arr, ind, n, target, ans, l):
     if ind == n:
         if target == 0:
             ans.append(l)
-        return
+        return ans
     if arr[ind] <= target:
         l.append(arr[ind])
         combinationSum(arr, ind, n, target - arr[ind], ans, l)
@@ -16,9 +16,9 @@ def combinationSum(arr, ind, n, target, ans, l):
 
 ans = []
 l = []
-arr = [1, 2, 3, 4, 5]
+arr = [2,3,6,7]
 ind = 0
-target = 5
+target = 7
 n = len(arr)
 x=combinationSum(arr, ind, n, target, ans, l)
 print(ans)
