@@ -1,8 +1,10 @@
-a= {1,2,3,4,5}
-d={
-    "name":"Rampravesh",
-    'age':34,
-    'roll':124
-}
-print("helllo there how are you \" where are you from ")
-print(new_dictionary)
+def count(n):
+    total = 0
+    for num in range(1,n+1):
+        x=str(num)
+        if len(x)%2!=0:
+            total+=1
+
+    return total
+s=count(786)
+print(s)

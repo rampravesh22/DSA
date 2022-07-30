@@ -31,12 +31,12 @@ class BST:
             return
         if data < self.key:
             if self.lchild is None:
-                print("Node is not present in left subtree")
+                print("\nNode is not present in left subtree")
             else:
                 self.lchild.search(data)
         else:
             if self.rchild is None:
-                print("Node is not present in the right subtree")
+                print("\nNode is not present in the right subtree")
             else:
                 self.rchild.search(data)
 
@@ -68,30 +68,42 @@ class BST:
         print(self.key, end=" ")
 
     # Deletion operation
-    def deleteNode(self, data):
+    def deleteNode(self, data, curr):
         if self.key is None:
-            print("Tree is empty")
+            print("\nTree is empty")
             return
         if data < self.key:
             if self.lchild is not None:
-                self.lchild = self.lchild.deleteNode(data)
+                self.lchild = self.lchild.deleteNode(data, curr)
             else:
-                print("Given node is not present in th tree")
+                print("\nGiven node is not present in th tree")
         elif data > self.key:
             if self.rchild is not None:
-                self.rchild = self.rchild.deleteNode(data)
+                self.rchild = self.rchild.deleteNode(data, curr)
             else:
-                print("Given node is not present in the tree")
+                print("\nGiven node is not present in the tree")
 
         else:
             # if the node contains zero or one child
             if self.lchild is None:
                 temp = self.rchild
+                if data == curr:
+                    self.key = temp.key
+                    self.lchild = temp.lchild
+                    self.rchild = temp.rchild
+                    temp = None
+                    return
                 self = None
                 return temp
             if self.rchild is None:
                 temp = self.lchild
-                self = None                           # inpection disabled : first argument of method is reassigned
+                if data == curr:
+                    self.key = temp.key
+                    self.lchild = temp.lchild
+                    self.rchild = temp.rchild
+                    temp = None
+                    return
+                self = None  # inpection disabled : first argument of method is reassigned
                 return temp
             # if the node contains two child node
             node = self.rchild
@@ -101,18 +113,22 @@ class BST:
             self.rchild = self.rchild.deleteNode(node.key)
         return self
 
-
-
-
     def __str__(self):
         return f"{self.key}"
 
 
-root = BST(10)
-l = [23, 4, 67, 8, 1, 90, 2]
+# this function is to count numbers of node in the BST
+def countNode(node):
+    if node is None:
+        return 0
+    else:
+        return 1 + countNode(node.lchild) + countNode(node.rchild)
 
-for data in l:
-    root.insertNode(data)
 
-root.deleteNode(2)
-root.inorder()
+root = BST(1)
+root.insertNode(12)
+if countNode(root) > 1:
+    root.deleteNode(10, root.key)
+else:
+    print("Can't perform this operation")
+root.preorder()
