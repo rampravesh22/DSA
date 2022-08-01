@@ -126,9 +126,9 @@ def countNode(node):
 
 
 root = BST(1)
-root.insertNode(12)
+# print(f"root node is : {root}")
 if countNode(root) > 1:
-    root.deleteNode(10, root.key)
+    root.deleteNode(1, root.key)
 else:
     print("Can't perform this operation")
 root.preorder()
