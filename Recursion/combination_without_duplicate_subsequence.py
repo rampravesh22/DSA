@@ -11,12 +11,12 @@ def combination2(arr, n, ind, target, ds, ans):
         if arr[i] > target:
             break
         ds.append(arr[i])
-        combination2(arr,n,i+1, target - arr[i], ds,ans)
+        combination2(arr, n, i + 1, target - arr[i], ds, ans)
         ds.pop()
 
 
 arr = [1, 1, 1, 2, 2]
 arr.sort()
 ans = []
-combination2(arr,n=len(arr),ind=0,target=4,ds=[],ans=ans)
+combination2(arr, n=len(arr), ind=0, target=4, ds=[], ans=ans)
 print(ans)
