@@ -76,7 +76,7 @@ class BST:
             if self.lchild is not None:
                 self.lchild = self.lchild.deleteNode(data, curr)
             else:
-                print("\nGiven node is not present in th tree")
+                print("\nGiven node is not present in the tree")
         elif data > self.key:
             if self.rchild is not None:
                 self.rchild = self.rchild.deleteNode(data, curr)
@@ -113,6 +113,21 @@ class BST:
             self.rchild = self.rchild.deleteNode(node.key)
         return self
 
+    # Find node with the smallest key
+    def minNode(self):
+        current = self
+        while current.lchild:
+            current = current.lchild
+        print("Node with smallest key is ", current.key, sep=": ")
+
+    # Find node with the smallest key
+    def maxNode(self):
+        current = self
+        while current.rchild:
+            current = current.rchild
+        print("Node with biggest key is ", current.key, sep=": ")
+
+    # This is for printing the root node
     def __str__(self):
         return f"{self.key}"
 
@@ -125,10 +140,15 @@ def countNode(node):
         return 1 + countNode(node.lchild) + countNode(node.rchild)
 
 
-root = BST(1)
-# print(f"root node is : {root}")
-if countNode(root) > 1:
-    root.deleteNode(1, root.key)
+root = BST(100)
+for node in [12, 3, 4, 89, 14, 34]:
+    root.insertNode(node)
+if countNode(root) > 1:  # I don't want to delete if the tree contains only one node so, I will print the else condition
+    pass
+    # root.deleteNode(1, root.key)
 else:
     print("Can't perform this operation")
 root.preorder()
+print()
+root.minNode()
+root.maxNode()
